@@ -1,7 +1,11 @@
 import { makeStyles, Paper } from '@material-ui/core';
 import { useContext, useEffect, useState } from 'react';
 import banner from '../../images/bannerbackground.png';
-import { getMealsAction, resetLoadingAction } from '../../store/action/actions';
+import {
+  currentPageAction,
+  getMealsAction,
+  resetLoadingAction,
+} from '../../store/action/actions';
 import { store } from '../../store/store';
 
 const useStyles = makeStyles((theme) => ({
@@ -84,6 +88,7 @@ const Hero = () => {
     dispatch(resetLoadingAction());
     const data = await (await fetch(url)).json();
     dispatch(getMealsAction(data.meals));
+    dispatch(currentPageAction(1));
   };
 
   return (

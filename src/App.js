@@ -51,6 +51,7 @@ function App() {
       unsubscribe();
     };
   }, []);
+
   return (
     <Router>
       <ThemeProvider theme={darkTheme}>

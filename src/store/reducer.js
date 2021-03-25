@@ -1,4 +1,5 @@
 import {
+  CURRENT_PAGE,
   GET_MEALS,
   REGISTER_USER,
   RESET_LOADING,
@@ -24,7 +25,7 @@ const reducer = (state = [], action) => {
       };
 
     case REGISTER_USER:
-      console.log({reducerjuice:action.payload});
+      console.log({ reducerjuice: action.payload });
       return {
         ...state,
         user: action.payload,
@@ -34,6 +35,12 @@ const reducer = (state = [], action) => {
       return {
         ...state,
         user: null,
+      };
+
+    case CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload,
       };
 
     default:

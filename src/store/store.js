@@ -5,6 +5,7 @@ const init = {
   meals: [],
   loading: true,
   user: {},
+  currentPage: 1,
 };
 
 const store = createContext(init);

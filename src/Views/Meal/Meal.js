@@ -46,32 +46,34 @@ const Meal = (props) => {
   };
 
   return (
-    <Grid item xs={12} sm={6} md={4} lg={3}>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia className={classes.media} image={image} title='Recipe' />
-          <CardContent>
-            <Typography gutterBottom variant='h5' component='h2'>
-              {mealName}
-            </Typography>
-            <Typography variant='body2' color='textSecondary' component='p'>
-              {strInstructions.substr(1, 100)}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button
-            onClick={() => history.push(`/meal/${mealName}`)}
-            size='small'
-            color={!darkState ? 'primary' : 'secondary'}
-          >
-            Details
-          </Button>
-        </CardActions>
-      </Card>
+    <>
+      <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Card className={classes.root}>
+          <CardActionArea>
+            <CardMedia className={classes.media} image={image} title='Recipe' />
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h2'>
+                {mealName}
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                {strInstructions.substr(1, 100)}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button
+              onClick={() => history.push(`/meal/${mealName}`)}
+              size='small'
+              color={!darkState ? 'primary' : 'secondary'}
+            >
+              Details
+            </Button>
+          </CardActions>
+        </Card>
 
-      <Box m={6} />
-    </Grid>
+        <Box m={6} />
+      </Grid>
+    </>
   );
 };
 

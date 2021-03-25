@@ -8,6 +8,8 @@ import { css } from '@emotion/react';
 import { store } from '../../store/store';
 import { getMealsAction } from '../../store/action/actions';
 import Hero from '../Hero/Hero';
+import Pagination from '../../components/HandlePagination';
+import HanldePagination from '../../components/HandlePagination';
 
 const override = css`
   display: block;
@@ -71,9 +73,8 @@ const Meals = ({ darkState }) => {
                   />
                 </>
               )}
-              {meals.map((meal) => (
-                <Meal darkState={darkState} key={meal.idMeal} {...meal} />
-              ))}
+
+              <HanldePagination meals={meals} darkState={darkState} />
             </Grid>
           </Grid>
         </Grid>

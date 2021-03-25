@@ -12,7 +12,7 @@ import banner from '../../images/signup-bg.png';
 // import { UseData } from '../DataContext';
 import PrimaryButton from '../../components/PrimaryButton';
 import { ExitToApp, LockOpen } from '@material-ui/icons';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { store } from '../../store/store';
 import { registerUserAction } from '../../store/action/actions';
 import { registerUser } from '../../utils/firebaseManager';
@@ -111,6 +111,12 @@ const SignUp = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (user?.displayName) {
+      history.push('/');
+    }
+  }, [user]);
 
   return (
     <div className={classes.banner}>

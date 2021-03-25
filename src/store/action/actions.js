@@ -3,6 +3,7 @@ import {
   RESET_LOADING,
   REGISTER_USER,
   SIGN_OUT,
+  CURRENT_PAGE,
 } from './actionTypes';
 
 export const getMealsAction = (meals) => {
@@ -30,5 +31,12 @@ export const registerUserAction = (user) => {
 export const SignoutAction = () => {
   return {
     type: SIGN_OUT,
+  };
+};
+
+export const currentPageAction = (value) => {
+  return {
+    type: CURRENT_PAGE,
+    payload: value,
   };
 };
